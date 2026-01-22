@@ -9,15 +9,13 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 
-Запуск RT DETR. Команда.
+Запуск RT DETR.
 python3 -m app.main --model rtdetr --input artifacts/crowd.mp4 --output outputs/crowd_rtdetr.mp4 --device cpu --conf 0.5 --save-json outputs/metrics_rtdetr.json
 
-Запуск YOLOv8. Команда.
+Запуск YOLOv8.
 python3 -m app.main --model yolov8 --input artifacts/crowd.mp4 --output outputs/crowd_yolov8.mp4 --device cpu --conf 0.4 --save-json outputs/metrics_yolov8.json
 
-Флаги. Для быстрого прогона используйте --max-frames N. Для более стабильных метрик используйте --warmup N.
-
-Выходные файлы. Видео сохраняются в outputs. Метрики сохраняются в outputs/metrics_rtdetr.json и outputs/metrics_yolov8.json. Отчет находится в reports/report.md.
+Видео сохраняются в outputs. Метрики сохраняются в outputs/metrics_rtdetr.json и outputs/metrics_yolov8.json. Отчет находится в reports/report.md.
 
 ONNX. Экспорт RT DETR.
 python3 -m tools.export_onnx --weights rtdetr-l.pt --output artifacts/rtdetr.onnx --opset 16
