@@ -1,0 +1,9 @@
+numpy
+opencv-python
+tqdm
+torch
+ultralytics
+onnx
+onnxruntime
+flake8
+pytest
